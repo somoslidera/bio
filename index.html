@@ -21,17 +21,22 @@
             text-align: center;
         }
         .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%; /* Faz a imagem ficar em formato circular */
+            /* Removidas as propriedades de círculo */
+            max-width: 250px; /* Largura máxima para a logo em telas maiores */
+            width: 80%; /* Ocupa 80% da largura do container em telas menores */
+            height: auto; /* Mantém a proporção original da imagem */
             margin-bottom: 15px; /* Espaçamento abaixo da logo */
-            object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
-            border: 2px solid #333; /* Borda sutil ao redor da logo */
+            display: block; /* Garante que ela ocupe sua própria linha e centralize */
+            margin-left: auto; /* Centraliza a imagem */
+            margin-right: auto; /* Centraliza a imagem */
+            /* Se quiser uma borda retangular, pode adicionar: */
+            /* border: 2px solid #333; */
+            /* padding: 10px; */
         }
         .profile-name {
             font-size: 1.2em;
             font-weight: bold;
-            margin-top: 20px; /* Aumentei um pouco a margem superior */
+            margin-top: 20px;
             margin-bottom: 30px;
             color: #FFFFFF;
         }
