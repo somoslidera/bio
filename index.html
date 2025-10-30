@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links - Lidera Soluções Empresariais</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 680px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 2px solid #333;
+        }
+        .profile-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #FFFFFF;
+        }
+        .link-button {
+            display: block;
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+            padding: 20px;
+            margin: 10px 0;
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid #444;
+            font-size: 1em;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .link-button:hover {
+            transform: scale(1.03);
+            background-color: #333;
+        }
+        .link-button.coming-soon {
+            background-color: #2a2a2a;
+            color: #777;
+            cursor: not-allowed;
+        }
+         .link-button.coming-soon:hover {
+            transform: scale(1);
+            background-color: #2a2a2a;
+        }
+        .link-button.whatsapp {
+            background-color: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+        .link-button.whatsapp:hover {
+            background-color: #1DAE56;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <img src="lidera-logo.png" alt="Logo Lidera" class="logo">
+
+        <div class="profile-name">@seu_usuario_social</div>
+
+        <a href="https://www.canva.com/design/DAG2qYstOq8/AsrvFqbAutCP-2O4WLJdqQ/view?utm_content=DAG2qYstOq8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=ha9fe66ed55" target="_blank" class="link-button">Semana do Lidera | 11 a 13 de novembro</a>
+        <a href="#" class="link-button coming-soon">Marketing: Tráfego Pago Descomplicado (Em Breve)</a>
+        <a href="#" class="link-button coming-soon">Vendas: Método Cliente Todo Dia (Em Breve)</a>
+        <a href="#" class="link-button coming-soon">Treinamento - Profissional 5 Estrelas (Em Breve)</a>
+        <a href="URL_DA_PAGINA_DE_PALESTRAS" target="_blank" class="link-button">Palestra Personalizada para Sua Empresa</a>
+        <a href="https://wa.me/5551994855542" target="_blank" class="link-button whatsapp">Fale conosco</a>
+
+        <div class="footer">
+            © 2025 Lidera Soluções Empresariais
+        </div>
+    </div>
+
+</body>
+</html>
