@@ -36,69 +36,79 @@
             margin-bottom: 30px;
             color: #FFFFFF;
         }
+        
+        /* --- ESTILO GERAL DOS BOTÕES --- */
         .link-button {
-            display: block;
+            display: flex; /* Mudado para Flex para alinhar imagem e texto */
+            align-items: center; /* Centraliza verticalmente imagem e texto */
+            justify-content: flex-start; /* Alinha conteúdo à esquerda */
             background-color: #1E1E1E;
             color: #FFFFFF;
-            padding: 20px;
-            margin: 10px 0;
+            padding: 15px 20px; /* Padding ajustado para acomodar as imagens */
+            margin: 12px 0; /* Margem vertical ligeiramente aumentada */
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 12px; /* Bordas do botão um pouco mais arredondadas */
             border: 1px solid #444;
             font-size: 1em;
             font-weight: bold;
+            text-align: left; /* Texto alinhado à esquerda fica melhor com ícones */
             transition: transform 0.2s, background-color 0.3s, color 0.3s, border-color 0.3s;
+            min-height: 60px; /* Garante altura mínima visualmente agradável */
         }
         
-        /* Efeito genérico para botões que não têm cor especial */
+        /* Efeito genérico hover */
         .link-button:hover {
-            transform: scale(1.03);
+            transform: scale(1.02); /* Escala ligeiramente menor para ser mais sutil */
             background-color: #333;
         }
 
-        /* --- NOVOS EFEITOS DE COR --- */
+        /* Garante que o texto ocupe o espaço restante */
+        .link-button span {
+            flex-grow: 1;
+        }
+
+        /* --- ESTILO DAS FOTOS NOS BOTÕES --- */
+        .button-icon {
+            width: 60px; /* Largura fixa da foto */
+            height: 60px; /* Altura fixa da foto */
+            border-radius: 50%; /* Torna a imagem perfeitamente circular */
+            object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+            margin-right: 15px; /* Espaço entre a foto e o texto */
+            border: 2px solid rgba(255, 255, 255, 0.1); /* Borda sutil ao redor da foto */
+            flex-shrink: 0; /* Impede que a imagem seja "esmagada" em telas pequenas */
+        }
+
+        /* --- EFEITOS DE COR ESPECÍFICOS --- */
         
         /* Efeito Dourado para destaques */
         .link-button.lidera-week:hover {
-            background-color: #D4AF37; /* Cor dourada */
-            color: #121212; /* Texto escuro para contraste */
+            background-color: #D4AF37; 
+            color: #121212;
             border-color: #D4AF37;
         }
-        
         /* Efeito Azul para Palestra */
         .link-button.palestra:hover {
-            background-color: #0056b3; /* Tom de azul profissional */
+            background-color: #0056b3;
             border-color: #0056b3;
         }
-
-        /* Efeito Roxo para Cursos (Marketing/Vendas/Treinamento) */
+        /* Efeito Roxo para Cursos */
         .link-button.curso:hover {
-            background-color: #6a1b9a; /* Roxo */
+            background-color: #6a1b9a;
             border-color: #6a1b9a;
         }
-        
         /* Efeito Verde para WhatsApp */
         .link-button.whatsapp {
             background-color: #25D366;
             color: white;
             border-color: #1DAE56;
+            justify-content: center; /* Centraliza o texto neste botão específico que não tem foto */
+            text-align: center;
         }
         .link-button.whatsapp:hover {
-            background-color: #1DAE56; /* Verde um pouco mais escuro */
+            background-color: #1DAE56;
             border-color: #1DAE56;
         }
         
-        /* Estilo para botões "Em Breve" (mantido caso precise no futuro) */
-        .link-button.coming-soon {
-            background-color: #2a2a2a;
-            color: #777;
-            cursor: not-allowed;
-        }
-        .link-button.coming-soon:hover {
-            transform: scale(1);
-            background-color: #2a2a2a;
-        }
-
         .footer {
             margin-top: 40px;
             font-size: 0.9em;
@@ -112,28 +122,46 @@
 <body>
 
     <div class="container">
-        <!-- Substitua pelo caminho real da sua imagem se ela não aparecer -->
+        <!-- Certifique-se de que esta imagem existe na mesma pasta -->
         <img src="lidera-logo.png" alt="Logo Lidera" class="logo">
 
         <div class="profile-name">@somos.lidera</div>
 
-        <!-- Botão Divulgação de Vagas (Mantido número geral) -->
-        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20na%20divulgação%20de%20vagas." target="_blank" class="link-button lidera-week">Divulgue Suas Vagas Com A Gente</a>
+        <!-- Botão Divulgação de Vagas (Sem foto, texto centralizado manualmente no CSS se desejar, ou mantido à esquerda) -->
+        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20na%20divulgação%20de%20vagas." target="_blank" class="link-button lidera-week">
+            <span>Divulgue Suas Vagas Com A Gente</span>
+        </a>
         
-        <!-- Botão Marketing (Rodrigo: 51998730488) -->
-        <a href="https://wa.me/5551998730488?text=Ol%C3%A1%20Rodrigo!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20curso%20de%20Marketing%20(Tráfego%20Pago)." target="_blank" class="link-button curso">Marketing: Tráfego Pago Descomplicado (Rodrigo Ribas)</a>
+        <!-- Botão Marketing (Rodrigo) COM FOTO -->
+        <a href="https://wa.me/5551998730488?text=Ol%C3%A1%20Rodrigo!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20curso%20de%20Marketing%20(Tráfego%20Pago)." target="_blank" class="link-button curso">
+            <!-- Certifique-se de que o arquivo foto-rodrigo.png está na pasta -->
+            <img src="foto-rodrigo.png" alt="Rodrigo Ribas" class="button-icon">
+            <span>Marketing: Tráfego Pago Descomplicado (Rodrigo Ribas)</span>
+        </a>
 
-        <!-- Botão Vendas (Guilherme: 51998921440) -->
-        <a href="https://wa.me/5551998921440?text=Ol%C3%A1%20Guilherme!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20curso%20de%20Vendas%20(Método%20Cliente%20Todo%20Dia)." target="_blank" class="link-button curso">Vendas: Método Cliente Todo Dia (Guilherme Emerim)</a>
+        <!-- Botão Vendas (Guilherme) COM FOTO -->
+        <a href="https://wa.me/5551998921440?text=Ol%C3%A1%20Guilherme!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20curso%20de%20Vendas%20(Método%20Cliente%20Todo%20Dia)." target="_blank" class="link-button curso">
+            <!-- Certifique-se de que o arquivo foto-guilherme.png está na pasta -->
+            <img src="foto-guilherme.png" alt="Guilherme Emerim" class="button-icon">
+            <span>Vendas: Método Cliente Todo Dia (Guilherme Emerim)</span>
+        </a>
 
-        <!-- Botão Treinamento (Charles: 51997177203) -->
-        <a href="https://wa.me/5551997177203?text=Ol%C3%A1%20Charles!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20Treinamento%20Profissional%205%20Estrelas." target="_blank" class="link-button curso">Treinamento - Profissional 5 Estrelas (Charles Simon)</a>
+        <!-- Botão Treinamento (Charles) COM FOTO -->
+        <a href="https://wa.me/5551997177203?text=Ol%C3%A1%20Charles!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20no%20Treinamento%20Profissional%205%20Estrelas." target="_blank" class="link-button curso">
+            <!-- Certifique-se de que o arquivo foto-charles.png está na pasta -->
+            <img src="foto-charles.png" alt="Charles Simon" class="button-icon">
+            <span>Treinamento - Profissional 5 Estrelas (Charles Simon)</span>
+        </a>
         
-        <!-- Botão Palestra (Mantido número geral) -->
-        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20na%20palestra." target="_blank" class="link-button palestra">Palestra Personalizada Dentro da Sua Empresa</a>
+        <!-- Botão Palestra -->
+        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20tenho%20interesse%20na%20palestra." target="_blank" class="link-button palestra">
+            <span>Palestra Personalizada Dentro da Sua Empresa</span>
+        </a>
         
-        <!-- Botão Fale Conosco (Mantido número geral) -->
-        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="link-button whatsapp">Fale conosco</a>
+        <!-- Botão Fale Conosco (Estilo diferente, texto centralizado) -->
+        <a href="https://wa.me/5551994855542?text=Ol%C3%A1!%20Vim%20pelo%20link%20da%20bio%20do%20Lidera%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="link-button whatsapp">
+            Fale conosco
+        </a>
 
         <div class="footer">
             © 2025 Lidera Soluções Empresariais
